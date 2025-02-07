@@ -379,3 +379,95 @@ footer p {
     cursor: pointer;
     font-weight: bold;
 }
+
+
+/* Add animations and responsiveness */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+nav, .banner, .trending-items, .info, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card img:hover {
+/*    transform: scale(1.1) rotate(2deg);*/
+    transition: all 0.3s ease-in-out;
+}
+
+.shop-now:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.trending-items h1 {
+    animation: slideIn 1s ease-in-out;
+}
+
+.cards .card {
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .search-bar {
+        width: 50%;
+    }
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .textbox, .side-img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 80%;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+    }
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-bar {
+        width: 100%;
+    }
+    .trending-items h1 {
+        font-size: 20px;
+    }
+    .card-img {
+        width: 90%;
+    }
+    footer {
+        text-align: center;
+    }
+}
